@@ -12,87 +12,81 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./examples/visualization.jpg "Visualization"
-[image2]: ./examples/grayscale.jpg "Grayscaling"
-[image3]: ./examples/random_noise.jpg "Random Noise"
-[image4]: ./examples/placeholder.png "Traffic Sign 1"
-[image5]: ./examples/placeholder.png "Traffic Sign 2"
-[image6]: ./examples/placeholder.png "Traffic Sign 3"
-[image7]: ./examples/placeholder.png "Traffic Sign 4"
-[image8]: ./examples/placeholder.png "Traffic Sign 5"
+[image1]: ./examples/class_distribution.png "Visualization"
+[image2]: ./examples/sample_images.png "Sample Images from the training dataset"
+[image3]: ./examples/min_images.png "Classes with min. examples in training dataset"
+[image4]: ./examples/beforeandafter_gray.png "Grayscaling"
+[image5]: ./examples/gray_clahe.png "Applying CLAHE"
 
 ## Rubric Points
-### I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
+I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
 
-### Writeup / README
+Here is a link to my [project code](https://github.com/agoila/udacity-carnd-P2/blob/master/LeNet_Traffic_Sign_Classifier.ipynb)
 
-#### 1. Provide a Writeup / README that includes all the rubric points and how you addressed each one. You can submit your writeup as markdown or pdf. You can use this template as a guide for writing the report. The submission includes the project code.
+### Dataset Summary & Exploration
+#### Dataset summary
+I used the pandas library to calculate summary statistics of the traffic signs data set:
 
-You're reading it! and here is a link to my [project code](https://github.com/udacity/CarND-Traffic-Sign-Classifier-Project/blob/master/Traffic_Sign_Classifier.ipynb)
+* The size of training set is 34799
+* The size of the validation set is 4410
+* The size of test set is 12630
+* The shape of a traffic sign image is (32, 32, 3)
+* The number of unique classes/labels in the data set is 43
 
-###Data Set Summary & Exploration
-
-####1. Provide a basic summary of the data set. In the code, the analysis should be done using python, numpy and/or pandas methods rather than hardcoding results manually.
-
-I used the pandas library to calculate summary statistics of the traffic
-signs data set:
-
-* The size of training set is ?
-* The size of the validation set is ?
-* The size of test set is ?
-* The shape of a traffic sign image is ?
-* The number of unique classes/labels in the data set is ?
-
-####2. Include an exploratory visualization of the dataset.
-
-Here is an exploratory visualization of the data set. It is a bar chart showing how the data ...
+#### Exploratory visualization
+Here is an exploratory visualization of the data set. It is a bar chart showing the class distribution in the dataset.
 
 ![alt text][image1]
 
-###Design and Test a Model Architecture
-
-####1. Describe how you preprocessed the image data. What techniques were chosen and why did you choose these techniques? Consider including images showing the output of each preprocessing technique. Pre-processing refers to techniques such as converting to grayscale, normalization, etc. (OPTIONAL: As described in the "Stand Out Suggestions" part of the rubric, if you generated additional data for training, describe why you decided to generate additional data, how you generated the data, and provide example images of the additional data. Then describe the characteristics of the augmented training set like number of images in the set, number of images for each class, etc.)
-
-As a first step, I decided to convert the images to grayscale because ...
-
-Here is an example of a traffic sign image before and after grayscaling.
+Also shown below are some sample images with their respective classes.
 
 ![alt text][image2]
 
-As a last step, I normalized the image data because ...
-
-I decided to generate additional data because ... 
-
-To add more data to the the data set, I used the following techniques because ... 
-
-Here is an example of an original image and an augmented image:
+Here are some classes that have the minimum number of examples in the training dataset (as observed from the bar chart above).
 
 ![alt text][image3]
 
-The difference between the original data set and the augmented data set is the following ... 
+### Design and Test a Model Architecture
+
+#### Describe how you preprocessed the image data. What techniques were chosen and why did you choose these techniques? 
+As a first step, I decided to convert the images to grayscale because instead of learning to classify traffic signs based on color in addition to the classes, it's easier for the model to learn from grayscaled images - much less work and if a new sign comes up in a color that the model has never seen before, it's going to be a lot easier for the model that ignores the color to begin with to classify that sign. 
+
+Here is an example of a traffic sign image before and after grayscaling.
+
+![alt text][image4]
+
+As a second step, I applied CLAHE to the grayscaled image data following instructions [here](http://docs.opencv.org/3.1.0/d5/daf/tutorial_py_histogram_equalization.html). This was done to improve the contrast of the images. Look at how it stretches the histogram of a sample training image. 
+
+![alt text][image5]
+
+As the last step, I normalized the image data so that the data has zero mean and unit variance.
 
 
-####2. Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
+#### Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
 
 My final model consisted of the following layers:
 
 | Layer         		|     Description	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| Input         		| 32x32x3 RGB image   							| 
-| Convolution 3x3     	| 1x1 stride, same padding, outputs 32x32x64 	|
+| Input         		| 32x32x1 Pre-processed image (grayscale, CLAHE, normalized)   							| 
+| Convolution 5x5     	| 1x1 stride, valid padding, outputs 28x28x6 	|
 | RELU					|												|
-| Max pooling	      	| 2x2 stride,  outputs 16x16x64 				|
-| Convolution 3x3	    | etc.      									|
-| Fully connected		| etc.        									|
-| Softmax				| etc.        									|
-|						|												|
-|						|												|
+| Max pooling	      	| 2x2 stride,  outputs 14x14x6 				|
+| Convolution 5x5     	| 1x1 stride, valid padding, outputs 10x10x16 	|
+| RELU					|												|
+| Max pooling	      	| 2x2 stride,  outputs 5x5x16 				|
+| Fully connected		| output depth = 120        									|
+| Dropout 	| Keep probability = 0.8        									|
+| Fully connected		| output depth = 84        									|
+| Dropout 	| Keep probability = 0.8        									|
+| Fully connected		| Logits, output depth = 43 (no. of classes)        									|
+| Softmax				|     									|
  
 
 
-####3. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
+#### Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
 
-To train the model, I used an ....
+To train the model, I used an Adam optimizer with a learning rate of 0.001, batch size of 128 and trained it for 25 epochs.
 
 ####4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
