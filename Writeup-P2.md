@@ -17,6 +17,11 @@ The goals / steps of this project are the following:
 [image3]: ./examples/min_images.png "Classes with min. examples in training dataset"
 [image4]: ./examples/beforeandafter_gray.png "Grayscaling"
 [image5]: ./examples/gray_clahe.png "Applying CLAHE"
+[image6]: ./examples/gray_clahe.png "Applying CLAHE"
+[image7]: ./examples/gray_clahe.png "Applying CLAHE"
+[image8]: ./examples/gray_clahe.png "Applying CLAHE"
+[image9]: ./examples/gray_clahe.png "Applying CLAHE"
+[image10]: ./examples/gray_clahe.png "Applying CLAHE"
 
 ## Rubric Points
 I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
@@ -86,9 +91,9 @@ My final model consisted of the following layers:
 
 #### Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
 
-To train the model, I used an Adam optimizer with a learning rate of 0.001, batch size of 128 and trained it for 25 epochs.
+To train the model, I used an Adam optimizer with a learning rate of 0.001, batch size of 128 and trained it for 25 epochs. For effective visualization of the training process, I also incorporated Tensorboard, and added histogram summaries and name scopes.
 
-####4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
+#### Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
 My final model results were:
 * training set accuracy of ?
@@ -108,14 +113,14 @@ If a well known architecture was chosen:
 * How does the final model's accuracy on the training, validation and test set provide evidence that the model is working well?
  
 
-###Test a Model on New Images
+### Test a Model on New Images
 
-####1. Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
+#### Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
 
 Here are five German traffic signs that I found on the web:
 
-![alt text][image4] ![alt text][image5] ![alt text][image6] 
-![alt text][image7] ![alt text][image8]
+![alt text][image6] ![alt text][image7] ![alt text][image8] 
+![alt text][image9] ![alt text][image10]
 
 The first image might be difficult to classify because ...
 
