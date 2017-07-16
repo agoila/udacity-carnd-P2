@@ -5,7 +5,7 @@ Overview
 ---
 In this project, we will use what we've learned about deep neural networks and convolutional neural networks to classify traffic signs. We will train and validate a model so it can classify traffic sign images using the [German Traffic Sign Dataset](http://benchmark.ini.rub.de/?section=gtsrb&subsection=dataset). After the model is trained, we will then try out our model on images of German traffic signs that we find on the web.
 
-Here's the [Ipython notebook](https://github.com/agoila/udacity-carnd-P2/blob/master/LeNet_Traffic_Sign_Classifier.ipynb) for this project. The HTML file is available [here](https://github.com/agoila/udacity-carnd-P2/blob/master/LeNet_Traffic_Sign_Classifier.html)
+Here's the [Ipython notebook](https://github.com/agoila/udacity-carnd-P2/blob/master/LeNet_Traffic_Sign_Classifier.ipynb) for this project. The HTML file is available [here](https://github.com/agoila/udacity-carnd-P2/blob/master/report.html)
 
 Check out the my [writeup](https://github.com/agoila/udacity-carnd-P2/blob/master/Writeup-P2.md) for this project.
 
