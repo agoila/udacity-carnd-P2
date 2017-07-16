@@ -20,8 +20,11 @@ The goals / steps of this project are the following:
 [image6]: ./examples/tensorboard_graph.png "TensorBoard Graph"
 [image7]: ./examples/tb_accuracy.png "Training Accuracy - TensorBoard"
 [image8]: ./examples/tb_loss.png "Loss - TensorBoard"
-[image9]: ./examples/gray_clahe.png "Applying CLAHE"
-[image10]: ./examples/gray_clahe.png "Applying CLAHE"
+[image9]: ./examples/test1.jpg "Speed Limit (20km/h)"
+[image10]: ./examples/test2.jpg "Dangerous Curve to the left"
+[image11]: ./examples/test3.jpg "Go straight or left"
+[image12]: ./examples/test4.jpg "Yield"
+[image13]: ./examples/test5.jpg "End of all speed and passing limits"
 
 ## Rubric Points
 I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
@@ -116,7 +119,6 @@ These dropout layers are visible in the TensorBoard graph visualization above. I
 
 I trained for 10 epochs initially, but carefully adjusted it to 40 after observing the loss performance in TensorBoard.
  
-
 ### Test a Model on New Images
 
 #### Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
