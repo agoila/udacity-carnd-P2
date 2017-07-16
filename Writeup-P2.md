@@ -102,8 +102,8 @@ To train the model, I used an Adam optimizer with a learning rate of 0.001, batc
 
 My final model results were:
 * training set accuracy of 94.6% (or 0.946)
-* validation set accuracy of 96.9% (or 0.969) 
-* test set accuracy of 94.9% (or 0.949)
+* validation set accuracy of 95.5% (or 0.955) 
+* test set accuracy of 94.2% (or 0.942)
 
 Here is a plot of training accuracy and loss, as visualized in TensorBoard:
 
