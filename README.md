@@ -9,6 +9,8 @@ Here's the [Ipython notebook](https://github.com/agoila/udacity-carnd-P2/blob/ma
 
 Check out the my [writeup](https://github.com/agoila/udacity-carnd-P2/blob/master/Writeup-P2.md) for this project. The images downloaded from the web can be found [here](https://github.com/agoila/udacity-carnd-P2/tree/master/examples) as *test1.jpg, test2.jpg* etc.
 
+The TensorBoard logdir is located [here](https://github.com/agoila/udacity-carnd-P2/tree/master/logs/train/1). To run TensorBoard from your command prompt, just type `tensorboard --logdir="./logs/train/1"`
+
 The writeup has been written following the guidelines [here](https://review.udacity.com/#!/rubrics/481/view).
 
 The Project
