@@ -21,7 +21,8 @@ The goals / steps of this project are the following:
 [image7]: ./examples/tb_accuracy.png "Training Accuracy - TensorBoard"
 [image8]: ./examples/tb_loss.png "Loss - TensorBoard"
 [image9]: ./examples/tes.PNG "Test images from the web"
-[image10]: ./examples/visualizations.PNG "Visualizing the Neural Network"
+[image10]: ./examples/visualizations.PNG "Visualizing the Neural Network for untrained images"
+[image11]: ./examples/visualizations_trained.PNG "Visualizing the Neural Network for trained images"
 
 ## Rubric Points
 I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
@@ -162,47 +163,53 @@ For the second image, the model is a 100% sure that it is a "Dangerous curve to 
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| 1.00         			| General caution   									| 
-| 0     				| Speed limit (20km/h) 										|
-| 0					| Go straight or left											|
-| 0	      			| Pedestrians					 				|
-| 0				    | Speed limit (120km/h)      							|
+| 1.00         			| Dangerous curve to the left   									| 
+| 0     				| Slippery road 										|
+| 0					| Road work											|
+| 0	      			| No passing for vehicles over 3.5 metric tons					 				|
+| 0				    | Double curve      							|
 
 For the third image:
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| .9991         			| General caution   									| 
-| .0008     				| Speed limit (20km/h) 										|
-| 0					| Go straight or left											|
-| 0	      			| Pedestrians					 				|
-| 0				    | Speed limit (120km/h)      							|
+| .9991         			| Go straight or left   									| 
+| .0008     				| Keep left 										|
+| 0					| Turn right ahead											|
+| 0	      			| Roundabout mandatory					 				|
+| 0				    | Dangerous curve to the left      							|
 
 For the fourth image:
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| 1.00         			| General caution   									| 
-| 0     				| Speed limit (20km/h) 										|
-| 0					| Go straight or left											|
-| 0	      			| Pedestrians					 				|
-| 0				    | Speed limit (120km/h)      							|
+| 1.00         			| Yield   									| 
+| 0     				| Speed limit (60km/h) 										|
+| 0					| Ahead only											|
+| 0	      			| Keep right					 				|
+| 0				    | No passing      							|
 
 And for the last image:
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| .9995         			| General caution   									| 
-| .0005     				| Speed limit (20km/h) 										|
-| 0					| Go straight or left											|
-| 0	      			| Pedestrians					 				|
-| 0				    | Speed limit (120km/h)      							|
+| .9995         			| End of all speed and passing limits   									| 
+| .0005     				| End of speed limit (80km/h) 										|
+| 0					| End of no passing											|
+| 0	      			| End of no passing by vehicles over 3.5 metric tons					 				|
+| 0				    | Speed limit (20km/h)      							|
 
 As we can see, the model predicts right on all traffic signs except the first one. 
 
 ### Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
 #### Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
 
-Here's the visualization of the trained network's feature maps for the first convolutional layer "conv1" for all the web test images:
+Here's a visualization of the network's feature maps for the first convolutional layer "conv1" for all the **untrained** images from the web:
 
 ![alt text][image10]
+
+Here's a visualization of the network's feature maps for the first convolutional layer "conv1" for all the **trained** images of the same traffic signs, for comparison:
+
+![alt text][image11]
+
+The feature maps for "conv1" or the first convolutional layer seem to react with high activations to the sign's boundary outline. We also observe that the **FeatureMap 4** has activations to the contrast in the sign's painted symbol.
