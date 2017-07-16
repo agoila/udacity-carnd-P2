@@ -12,7 +12,7 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./examples/class_distribution.png "Visualization"
+[image1]: ./examples/class_distribution.png "Visualization" *Class Distribution*
 [image2]: ./examples/sample_images.png "Sample Images from the training dataset"
 [image3]: ./examples/min_images.png "Classes with min. examples in training dataset"
 [image4]: ./examples/beforeandafter_gray.png "Grayscaling"
