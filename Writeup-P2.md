@@ -97,9 +97,9 @@ To train the model, I used an Adam optimizer with a learning rate of 0.001, batc
 #### Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
 My final model results were:
-* training set accuracy of 95.5% (or 0.955)
-* validation set accuracy of 96.5% (or 0.965) 
-* test set accuracy of 94.7% (or 0.947)
+* training set accuracy of 94.6% (or 0.946)
+* validation set accuracy of 95.1% (or 0.951) 
+* test set accuracy of 93.0% (or 0.930)
 
 Here is a plot of training accuracy and loss, as visualized in TensorBoard:
 
@@ -113,7 +113,7 @@ With no dropout, I observed that the training accuracy was much higher than the 
 
 These dropout layers are visible in the TensorBoard graph visualization above. Initial value was chosen to be 0.8 and after some finetuning, I achieved best accuracy with a 50% keep_probability on the dropout layers.
 
-I trained for 10 epochs initially, but carefully adjusted it to 30 after observing the loss performance in TensorBoard.
+I trained for 10 epochs initially, but carefully adjusted it to 40 after observing the loss performance in TensorBoard.
  
 ### Test a Model on New Images
 
@@ -123,7 +123,7 @@ Here are five German traffic signs that I found on the web:
 
 ![alt text][image9]
 
-The first image might be difficult to classify because ...
+The first image might be difficult to classify because it belongs to a class (class 0) that has the minimum number of examples in the training/validation/test set. In short, the model doesn't see enough representative examples in the datasets and hence it hasn't learned very well on this type of image. 
 
 #### Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 
@@ -131,11 +131,11 @@ Here are the results of the prediction:
 
 | Image			        |     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| Stop Sign      		| Stop sign   									| 
-| U-turn     			| U-turn 										|
-| Yield					| Yield											|
-| 100 km/h	      		| Bumpy Road					 				|
-| Slippery Road			| Slippery Road      							|
+| Speed limit (20km/h)      		| General Caution   									| 
+| Dangerous curve to the left     			| Dangerous curve to the left 										|
+| Go straight or left					| Go straight or left											|
+| Yield	      		| Yield					 				|
+| End of all speed and passing limits			| End of all speed and passing limits      							|
 
 
 The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set of ...
