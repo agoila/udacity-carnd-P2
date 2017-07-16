@@ -97,9 +97,9 @@ To train the model, I used an Adam optimizer with a learning rate of 0.001, batc
 #### Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
 My final model results were:
-* training set accuracy of 94.6% (or 0.946)
-* validation set accuracy of 95.5% (or 0.955) 
-* test set accuracy of 94.2% (or 0.942)
+* training set accuracy of 95.5% (or 0.955)
+* validation set accuracy of 96.5% (or 0.965) 
+* test set accuracy of 94.7% (or 0.947)
 
 Here is a plot of training accuracy and loss, as visualized in TensorBoard:
 
@@ -113,7 +113,7 @@ With no dropout, I observed that the training accuracy was much higher than the 
 
 These dropout layers are visible in the TensorBoard graph visualization above. Initial value was chosen to be 0.8 and after some finetuning, I achieved best accuracy with a 50% keep_probability on the dropout layers.
 
-I trained for 10 epochs initially, but carefully adjusted it to 40 after observing the loss performance in TensorBoard.
+I trained for 10 epochs initially, but carefully adjusted it to 30 after observing the loss performance in TensorBoard.
  
 ### Test a Model on New Images
 
