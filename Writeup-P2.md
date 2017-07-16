@@ -161,43 +161,45 @@ For the second image, the model is a 100% sure that it is a "Dangerous curve to 
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| .79         			| General caution   									| 
-| .077     				| Speed limit (20km/h) 										|
-| .033					| Go straight or left											|
-| .026	      			| Pedestrians					 				|
-| .019				    | Speed limit (120km/h)      							|
+| 1.00         			| General caution   									| 
+| 0     				| Speed limit (20km/h) 										|
+| 0					| Go straight or left											|
+| 0	      			| Pedestrians					 				|
+| 0				    | Speed limit (120km/h)      							|
 
 For the third image:
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| .79         			| General caution   									| 
-| .077     				| Speed limit (20km/h) 										|
-| .033					| Go straight or left											|
-| .026	      			| Pedestrians					 				|
-| .019				    | Speed limit (120km/h)      							|
+| .9991         			| General caution   									| 
+| .0008     				| Speed limit (20km/h) 										|
+| 0					| Go straight or left											|
+| 0	      			| Pedestrians					 				|
+| 0				    | Speed limit (120km/h)      							|
 
 For the fourth image:
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| .79         			| General caution   									| 
-| .077     				| Speed limit (20km/h) 										|
-| .033					| Go straight or left											|
-| .026	      			| Pedestrians					 				|
-| .019				    | Speed limit (120km/h)      							|
+| 1.00         			| General caution   									| 
+| 0     				| Speed limit (20km/h) 										|
+| 0					| Go straight or left											|
+| 0	      			| Pedestrians					 				|
+| 0				    | Speed limit (120km/h)      							|
 
 And for the last image:
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| .79         			| General caution   									| 
-| .077     				| Speed limit (20km/h) 										|
-| .033					| Go straight or left											|
-| .026	      			| Pedestrians					 				|
-| .019				    | Speed limit (120km/h)      							|
+| .9995         			| General caution   									| 
+| .0005     				| Speed limit (20km/h) 										|
+| 0					| Go straight or left											|
+| 0	      			| Pedestrians					 				|
+| 0				    | Speed limit (120km/h)      							|
 
-### (Optional) Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
-####1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
+As we can see, the model predicts right on all traffic signs except the first one. 
+
+### Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
+#### Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
 
 
