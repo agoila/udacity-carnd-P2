@@ -20,11 +20,7 @@ The goals / steps of this project are the following:
 [image6]: ./examples/tensorboard_graph.png "TensorBoard Graph"
 [image7]: ./examples/tb_accuracy.png "Training Accuracy - TensorBoard"
 [image8]: ./examples/tb_loss.png "Loss - TensorBoard"
-[image9]: ./examples/test1.jpg "Speed Limit (20km/h)"
-[image10]: ./examples/test2.jpg "Dangerous Curve to the left"
-[image11]: ./examples/test3.jpg "Go straight or left"
-[image12]: ./examples/test4.jpg "Yield"
-[image13]: ./examples/test5.jpg "End of all speed and passing limits"
+[image9]: ./examples/tes.PNG "Test images from the web"
 
 ## Rubric Points
 I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
@@ -125,8 +121,7 @@ I trained for 10 epochs initially, but carefully adjusted it to 40 after observi
 
 Here are five German traffic signs that I found on the web:
 
-![alt text][image9]{:height="36px" width="36px"} ![alt text][image10] ![alt text][image11] 
-![alt text][image12] ![alt text][image13]
+![alt text][image9]
 
 The first image might be difficult to classify because ...
 
