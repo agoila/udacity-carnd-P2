@@ -21,7 +21,7 @@ The goals / steps of this project are the following:
 [image7]: ./examples/tb_accuracy.png "Training Accuracy - TensorBoard"
 [image8]: ./examples/tb_loss.png "Loss - TensorBoard"
 [image9]: ./examples/tes.PNG "Test images from the web"
-[image10]: ./examples/visualizations.PNG "Visualizing the Neural Network for untrained images"
+[image10]: ./examples/visualizations_untrained.PNG "Visualizing the Neural Network for untrained images"
 [image11]: ./examples/visualizations_trained.PNG "Visualizing the Neural Network for trained images"
 
 ## Rubric Points
