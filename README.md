@@ -7,7 +7,7 @@ In this project, we will use what we've learned about deep neural networks and c
 
 Here's the [Ipython notebook](https://github.com/agoila/udacity-carnd-P2/blob/master/LeNet_Traffic_Sign_Classifier.ipynb) for this project. The HTML file is available [here](https://github.com/agoila/udacity-carnd-P2/blob/master/report.html)
 
-Check out the my [writeup](https://github.com/agoila/udacity-carnd-P2/blob/master/Writeup-P2.md) for this project.
+Check out the my [writeup](https://github.com/agoila/udacity-carnd-P2/blob/master/Writeup-P2.md) for this project. The images downloaded from the web can be found [here](https://github.com/agoila/udacity-carnd-P2/tree/master/examples) as *test1.jpg, test2.jpg* etc.
 
 The writeup has been written following the guidelines [here](https://review.udacity.com/#!/rubrics/481/view).
 
