@@ -125,7 +125,7 @@ I trained for 10 epochs initially, but carefully adjusted it to 40 after observi
 
 Here are five German traffic signs that I found on the web:
 
-![alt text][image9] ![alt text][image10] ![alt text][image11] 
+![alt text][image9]{:height="36px" width="36px"} ![alt text][image10] ![alt text][image11] 
 ![alt text][image12] ![alt text][image13]
 
 The first image might be difficult to classify because ...
