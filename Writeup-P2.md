@@ -89,7 +89,7 @@ My final model consisted of the following layers:
  
 Here's the graph visualization in TensorBoard:
 
-![alt text][image6](Hello)
+![alt text][image6]
 
 #### Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
 
@@ -114,15 +114,7 @@ With no dropout, I observed that the training accuracy was much higher than the 
 
 These dropout layers are visible in the TensorBoard graph visualization above. Initial value was chosen to be 0.8 and after some finetuning, I achieved best accuracy with a 50% keep_probability on the dropout layers.
 
-If an iterative approach was chosen:
-
-* How was the architecture adjusted and why was it adjusted? Typical adjustments could include choosing a different model architecture, adding or taking away layers (pooling, dropout, convolution, etc), using an activation function or changing the activation function. One common justification for adjusting an architecture would be due to overfitting or underfitting. A high accuracy on the training set but low accuracy on the validation set indicates over fitting; a low accuracy on both sets indicates under fitting.
-* Which parameters were tuned? How were they adjusted and why?
-* What are some of the important design choices and why were they chosen? For example, why might a convolution layer work well with this problem? How might a dropout layer help with creating a successful model?
-
-If a well known architecture was chosen:
-
-* How does the final model's accuracy on the training, validation and test set provide evidence that the model is working well?
+I trained for 10 epochs initially, but carefully finetuned it to 25 after observing the performance in TensorBoard.
  
 
 ### Test a Model on New Images
@@ -131,12 +123,12 @@ If a well known architecture was chosen:
 
 Here are five German traffic signs that I found on the web:
 
-![alt text][image6] ![alt text][image7] ![alt text][image8] 
-![alt text][image9] ![alt text][image10]
+![alt text][image9] ![alt text][image10] ![alt text][image11] 
+![alt text][image12] ![alt text][image13]
 
 The first image might be difficult to classify because ...
 
-####2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
+#### Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 
 Here are the results of the prediction:
 
