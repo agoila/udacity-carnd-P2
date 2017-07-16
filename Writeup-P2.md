@@ -12,7 +12,7 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./examples/class_distribution.png "Visualization" *Class Distribution*
+[image1]: ./examples/class_distribution.png "Visualization" 
 [image2]: ./examples/sample_images.png "Sample Images from the training dataset"
 [image3]: ./examples/min_images.png "Classes with min. examples in training dataset"
 [image4]: ./examples/beforeandafter_gray.png "Grayscaling"
@@ -42,6 +42,7 @@ I used the pandas library to calculate summary statistics of the traffic signs d
 Here is an exploratory visualization of the data set. It is a bar chart showing the class distribution in the dataset.
 
 ![alt text][image1]
+*Class Distribution*
 
 Also shown below are some sample images with their respective classes.
 
