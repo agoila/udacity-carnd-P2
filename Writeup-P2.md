@@ -17,9 +17,9 @@ The goals / steps of this project are the following:
 [image3]: ./examples/min_images.png "Classes with min. examples in training dataset"
 [image4]: ./examples/beforeandafter_gray.png "Grayscaling"
 [image5]: ./examples/gray_clahe.png "Applying CLAHE"
-[image6]: ./examples/gray_clahe.png "Applying CLAHE"
-[image7]: ./examples/gray_clahe.png "Applying CLAHE"
-[image8]: ./examples/gray_clahe.png "Applying CLAHE"
+[image6]: ./examples/tensorboard_graph.png "TensorBoard Graph"
+[image7]: ./examples/tb_accuracy.png "Training Accuracy - TensorBoard"
+[image8]: ./examples/tb_loss.png "Loss - TensorBoard"
 [image9]: ./examples/gray_clahe.png "Applying CLAHE"
 [image10]: ./examples/gray_clahe.png "Applying CLAHE"
 
@@ -81,9 +81,9 @@ My final model consisted of the following layers:
 | RELU					|												|
 | Max pooling	      	| 2x2 stride,  outputs 5x5x16 				|
 | Fully connected		| output depth = 120        									|
-| Dropout 	| Keep probability = 0.8        									|
+| Dropout 	| Keep probability = 0.5        									|
 | Fully connected		| output depth = 84        									|
-| Dropout 	| Keep probability = 0.8        									|
+| Dropout 	| Keep probability = 0.5        									|
 | Fully connected		| Logits, output depth = 43 (no. of classes)        									|
 | Softmax				|     									|
  
@@ -91,18 +91,29 @@ My final model consisted of the following layers:
 
 #### Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
 
-To train the model, I used an Adam optimizer with a learning rate of 0.001, batch size of 128 and trained it for 25 epochs. For effective visualization of the training process, I also incorporated Tensorboard, and added histogram summaries and name scopes.
+To train the model, I used an Adam optimizer with a learning rate of 0.001, batch size of 128 and trained it for 25 epochs. 
+
+For an effective visualization of the training process, I also incorporated TensorBoard, and added histogram summaries and name scopes. Here's the graph visualization in TensorBoard:
+
+![alt text][image6]
 
 #### Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
 My final model results were:
-* training set accuracy of ?
-* validation set accuracy of ? 
-* test set accuracy of ?
+* training set accuracy of 93.7% (or 0.937)
+* validation set accuracy of 96.3% (or 0.963) 
+* test set accuracy of 94.4% (or 0.944)
+
+Here is a plot of training accuracy and loss, as visualized in TensorBoard:
+
+![alt text][image7] ![alt text][image8]
+
+In this project, I chose the LeNet architecture as the starting point. It is a great starting point for building a network to classify traffic signs.
+
+The initial LeNet architecture was setup for MNIST classification tasks, and thus needed to be changed. 
 
 If an iterative approach was chosen:
-* What was the first architecture that was tried and why was it chosen?
-* What were some problems with the initial architecture?
+
 * How was the architecture adjusted and why was it adjusted? Typical adjustments could include choosing a different model architecture, adding or taking away layers (pooling, dropout, convolution, etc), using an activation function or changing the activation function. One common justification for adjusting an architecture would be due to overfitting or underfitting. A high accuracy on the training set but low accuracy on the validation set indicates over fitting; a low accuracy on both sets indicates under fitting.
 * Which parameters were tuned? How were they adjusted and why?
 * What are some of the important design choices and why were they chosen? For example, why might a convolution layer work well with this problem? How might a dropout layer help with creating a successful model?
