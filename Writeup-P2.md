@@ -42,7 +42,6 @@ I used the pandas library to calculate summary statistics of the traffic signs d
 Here is an exploratory visualization of the data set. It is a bar chart showing the class distribution in the dataset.
 
 ![alt text][image1]
-*Class Distribution*
 
 Also shown below are some sample images with their respective classes.
 
@@ -88,15 +87,13 @@ My final model consisted of the following layers:
 | Fully connected		| Logits, output depth = 43 (no. of classes)        									|
 | Softmax				|     									|
  
+Here's the graph visualization in TensorBoard:
 
+![alt text][image6](Hello)
 
 #### Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
 
-To train the model, I used an Adam optimizer with a learning rate of 0.001, batch size of 128 and trained it for 25 epochs. 
-
-For an effective visualization of the training process, I also incorporated TensorBoard, and added histogram summaries and name scopes. Here's the graph visualization in TensorBoard:
-
-![alt text][image6]
+To train the model, I used an Adam optimizer with a learning rate of 0.001, batch size of 128 and trained it for 25 epochs. For an effective visualization of the training process, I also incorporated TensorBoard, and added histogram summaries and name scopes. 
 
 #### Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
@@ -109,9 +106,13 @@ Here is a plot of training accuracy and loss, as visualized in TensorBoard:
 
 ![alt text][image7] ![alt text][image8]
 
-In this project, I chose the LeNet architecture as the starting point. It is a great starting point for building a network to classify traffic signs.
+In this project, I chose the LeNet architecture as the starting point. It is a great starting point for building a network to classify traffic signs, and is a simple architecture to begin with.
 
-The initial LeNet architecture was setup for MNIST classification tasks, and thus needed to be changed. 
+The initial LeNet architecture was setup for MNIST classification tasks, and thus needed to be changed. I updated the input and output layer depths to match the image size and the number of classes. 
+
+With no dropout, I observed that the training accuracy was much higher than the validation accuracy (0.98 to 0.84), i.e the model was overfitting. Dropout layers were introduced after each fully connected layer as a regularization measure. 
+
+These dropout layers are visible in the TensorBoard graph visualization above. Initial value was chosen to be 0.8 and after some finetuning, I achieved best accuracy with a 50% keep_probability on the dropout layers.
 
 If an iterative approach was chosen:
 
@@ -120,8 +121,7 @@ If an iterative approach was chosen:
 * What are some of the important design choices and why were they chosen? For example, why might a convolution layer work well with this problem? How might a dropout layer help with creating a successful model?
 
 If a well known architecture was chosen:
-* What architecture was chosen?
-* Why did you believe it would be relevant to the traffic sign application?
+
 * How does the final model's accuracy on the training, validation and test set provide evidence that the model is working well?
  
 
