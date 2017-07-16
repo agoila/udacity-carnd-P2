@@ -21,6 +21,7 @@ The goals / steps of this project are the following:
 [image7]: ./examples/tb_accuracy.png "Training Accuracy - TensorBoard"
 [image8]: ./examples/tb_loss.png "Loss - TensorBoard"
 [image9]: ./examples/tes.PNG "Test images from the web"
+[image10]: ./examples/visualizations.PNG "Visualizing the Neural Network"
 
 ## Rubric Points
 I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
@@ -202,4 +203,6 @@ As we can see, the model predicts right on all traffic signs except the first on
 ### Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
 #### Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
 
+Here's the visualization of the trained network's feature maps for the first convolutional layer "conv1" for all the web test images:
 
+![alt text][image10]
