@@ -32,11 +32,11 @@ Here is a link to my [project code](https://github.com/agoila/udacity-carnd-P2/b
 #### Dataset summary
 I used the pandas library to calculate summary statistics of the traffic signs data set:
 
-* The size of training set is 34799
-* The size of the validation set is 4410
-* The size of test set is 12630
-* The shape of a traffic sign image is (32, 32, 3)
-* The number of unique classes/labels in the data set is 43
+* The size of training set is **34799**
+* The size of the validation set is **4410**
+* The size of test set is **12630**
+* The shape of a traffic sign image is **(32, 32, 3)**
+* The number of unique classes/labels in the data set is **43**
 
 #### Exploratory visualization
 Here is an exploratory visualization of the data set. It is a bar chart showing the class distribution in the dataset.
